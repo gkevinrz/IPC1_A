@@ -1,3 +1,10 @@
+function abrirRegistro(){
+  window.open("RegistroPacientes/index.html"); 
+}
+
+
+
+
 (function ($) {
     "use strict";
     

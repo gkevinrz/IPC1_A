@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modificar Perfil | UHospital
+    </title>
+	<!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <script src="https://kit.fontawesome.com/413a5a0e1a.js" crossorigin="anonymous"></script>
+
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+</head>
+<body onload="ModificarPerfilP()">
+    <div id="wrapper">
+		<nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong>UHospital</strong></a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+         
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">  
+                        <li class="divider"></li>
+                        <li><a href="ModificarPerfil.html"><i class="fas fa-user-edit"></i> Modificar Perfil</a></li>
+                        <li><a onclick="cerrarSesion()" href="../RegistroPacientes/index.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
+
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+		<nav class="navbar-default navbar-side" role="navigation">
+			<div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
+				<div class="sidebar-collapse">
+					<ul class="nav" id="main-menu">
+	
+						<li>
+							<a class="active-menu" href="index.html"><i class="fas fa-home"></i></i> Inicio</a>
+						</li>
+						<li>
+							<a href="SolicitarCita.html"><i class="fa fa-desktop"></i>Solicitar Cita </a>
+						</li>
+						<li>
+							<a href="ComprarMedicina.html"><i class="fas fa-shopping-cart"></i>Comprar Medicamentos</a>
+						</li>
+					  
+						<li>
+							<a href="VerPedido.html"><i class="fa fa-table"></i>Ver Pedido</a>
+						</li>
+	
+					</ul>
+	
+				</div>
+	
+			</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+		  <div class="header"> 
+                        <h1 class="page-header">
+                            Modificar Perfil <small></small>
+                        </h1>							
+			</div>
+            <div id="page-inner"> 
+                <div class="row gutters">
+                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="mb-2 text-primary">Modificar Datos</h6>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="fullName">Nombre</label>
+                                        <input type="text" class="form-control" id="INombreNuevo" placeholder="Ingrese su nombre">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="eMail">Apellido</label>
+                                        <input type="text" class="form-control" id="IApellidoNuevo" placeholder="Ingrese su apellido">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="phone">Numero de teléfono</label>
+                                        <input type="text" class="form-control" id="ITelNuevo" placeholder="Ingrese su numero de teléfono">
+                                    </div>
+                                </div>
+
+                                <div id ="fechanac"class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">				
+                                    <div class="form-group">
+										<label for="Fecha">Fecha de Nacimiento</label>			
+                                        <input  class="form-control" type="number" min="1" max="31" id="InputDiaNuevo" placeholder="Día">
+                    <select class="form-control" aria-label=".form-select-sm example" name="Mes" id="MesNuevo" required>
+                      <option value="01">Enero</option>
+                      <option value="02">Febrero</option>
+                      <option value="03">Marzo</option>
+                      <option value="04">Abril</option>
+                      <option value="05">Mayo</option>
+                      <option value="06">Junio</option>
+                      <option value="07">Julio</option>
+                      <option value="08">Agosto</option>
+                      <option value="09">Septiembre</option>
+                      <option value="10">Octubre</option>
+                      <option value="11">Noviembre</option>
+                      <option value="12">Diciembre</option>
+                    </select>
+                    <input class="form-control"type="number"  id="InputAñoNuevo"placeholder="Año">
+				</div>
+			</div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="eMail">Usuario</label>
+                                        <input type="text" class="form-control" id="IUsuarioNuevo" placeholder="Ingresar nuevo nombre de usuario">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="eMail">Nueva Contraseña</label>
+                                        <input type="password" class="form-control" id="IContraseñaNueva" placeholder="Ingrese nueva contraseña">
+                                    </div>
+                                </div>
+                           
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group">
+									<label for="genero">Género</label>
+									<select class="form-control" aria-label=".form-select-sm example" name="Genero" id="GeneroNuevo" required>
+										<option value="" disabled selected>Elija una opción</option>
+
+										<option value="M">Hombre</option>
+										<option value="F">Mujer</option>
+				
+									  </select>						
+											</div>
+							</div>
+						</div>
+                    
+					</div>
+   
+				
+				
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right">
+                                        <button type="button" id="submit" onclick="botonModificarP()" name="Guardar" class="btn btn-primary">Guardar
+                    
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+				</div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/FuncionesModPaciente.js"></script>
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+    
+   
+</body>
+</html>

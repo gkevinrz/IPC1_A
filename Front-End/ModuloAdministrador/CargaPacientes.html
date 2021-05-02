@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/img/IconoUH.ico" type="image/icon" sizes="16x16">
+
+    <title>Carga Pacientes | UHospital</title>
+	<!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/413a5a0e1a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>	
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+     <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong>UHospital</strong></a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">  
+                        <li class="divider"></li>
+                        <li><a href="../RegistroPacientes/index.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                  
+                </li>
+            
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a href="index.html"><i class="fa fa-dashboard"></i>Inicio</a>
+                    </li>
+                    <li>
+                        <a href="CargaPacientes.html" class="active-menu"><i class="fas fa-file-upload"></i>Cargar Pacientes</a>
+                    </li>
+					<li>
+                        <a href="CargaDoctores.html" ><i class="fas fa-file-upload"></i>Cargar Médicos</a>
+                    </li>
+                    <li>
+                        <a href="CargaEnfermeras.html"><i class="fas fa-file-upload"></i>Cargar Enfermeras</a>
+                    </li>
+                    
+                    <li>
+                        <a href="CargaMedicina.html"><i class="fas fa-file-upload"></i>Cargar Medicamentos</a>
+                    </li>
+
+
+                    <li>
+                        <a href="#"><i class="fas fa-table"></i>Ver tablas<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                        <a href="VerTablaPacientes.html"><i class="fas fa-hospital-user"></i>Ver tabla Pacientes</a>
+                            </li>
+                            <li>
+                                <a href="VerTablaDoctores.html"><i class="fas fa-user-md"></i>Ver tabla médicos</a>
+                            </li>
+                            <li>
+                                <a href="VerTablaEnfermeras.html"><i class="fas fa-user-nurse"></i>Ver tabla enfermeras</a>
+                            </li>
+                            <li>
+                                <a href="VerTablaMedicina.html"><i class="fas fa-pills"></i>Ver tabla medicamentos</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper2">
+		  <div class="header"> 
+                        <h1 class="page-header">
+                            Carga Masiva de Pacientes  <small></small>
+                        </h1>
+				 
+									
+		</div>
+            <div id="page-inner"> 
+				 
+  
+                    <h1><strong></strong> </h1>
+                    
+                  
+                    
+                    <div class="form-group file-area">
+                          <label for="images">Selecciona un archivo .csv<span></span></label>
+                      <input type="file" name="inputcargaPac" id="InputPacientes" accept=".csv" required="required"/>
+                      <div class="file-dummy">
+                        <div class="success">Excelente. Archivo cargado</div>
+                        <div class="default">Please select some files</div>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <button onclick="CargarPacientes()" type="submit">Cargar Pacientes</button>
+                    </div>
+                    
+                      
+									
+
+                 <!-- /. ROW  -->
+
+                <!-- /. ROW  -->
+            
+                 <!-- /. ROW  -->
+                
+        
+                <!-- /. ROW  -->
+				</div>
+             <!-- /. PAGE INNER  -->
+             <footer><p>All right reserved. Template by: Kevin Ruíz</p></footer>
+
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+<script src="assets/js/FuncionesAdministrador.js"></script>
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+ 
+</body>
+</html>

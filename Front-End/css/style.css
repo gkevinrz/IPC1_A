@@ -1,12 +1,46 @@
 /*******************************/
 /********* General CSS *********/
 /*******************************/
+
+    
 body {
     color: #797979;
     background: #ffffff;
     font-family: 'Lato', sans-serif;
 }
+body>.img-fluid{
+    max-width: 300px;
+    height: auto;
+}
+.col-md-4>img{
+width: 130px;
+height: 200px;
+}
+.col-md-8{
+    padding-left: 50px;
+}
+.mb-3{
+ background-color: #d4e6f1  ;
+}
+#s{
+    width:auto;
+    background-color:white;
+}
 
+
+.col-md-4>#imgs{
+    width: 200px;
+height: 200px;
+}
+.img-fluid{
+    margin-right:300px;
+    margin-left:300px;
+    width: 600px;
+    height: 600px;
+
+
+
+}
 h1,
 h2, 
 h3, 

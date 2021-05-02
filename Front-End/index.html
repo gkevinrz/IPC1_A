@@ -2,13 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Confer - Consulting Website Template Free Download</title>
+        <title>Bienvenido a UHospital</title>
+
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Consulting Website Template Free Download" name="keywords">
         <meta content="Consulting Website Template Free Download" name="description">
 
         <!-- Favicon -->
         <link href="img/favicon.ico" rel="icon">
+        <link rel="icon" href="img/IconoUH.ico" type="image/icon" sizes="16x16">
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
@@ -18,7 +20,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="lib/animate/animate.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
     </head>
@@ -39,12 +41,12 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
                         <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                        <a href="service.html" class="nav-item nav-link">Misión</a>
-                        <a href="feature.html" class="nav-item nav-link">Visión</a>
+                        <a href="Mision.html" class="nav-item nav-link">Misión</a>
+                        <a href="Vision.html" class="nav-item nav-link">Visión</a>
                         <a href="about.html" class="nav-item nav-link">Acerca de</a>
-                        <a href="advisor.html" class="nav-item nav-link">Medidas de prevención | Covid-19</a>
-                        <a href="contact.html" class="nav-item nav-link">Contáctenos</a>
-                        <a href="review.html" class="nav-item nav-link">Estudiante</a>
+                        <a href="Medidas.html" class="nav-item nav-link">Medidas de prevención | Covid-19</a>
+                        <a href="Contacto.html" class="nav-item nav-link">Contáctenos</a>
+                        <a href="Estudiante.html" class="nav-item nav-link">Estudiante</a>
                     </div>
                 </div>
             </div>
@@ -64,7 +66,7 @@
                             <h1>Tu salud es lo primero</h1>
                             <div class="carousel-btn">
                                 <a class="btn" onclick="abrirRegistro()" href="">Iniciar Sesion</a>
-                                <a class="btn" href="">Registrarse</a>
+                                <a class="btn" onclick="abrirRegistro()"href="">Registrarse</a>
                             </div>
                         </div>
                     </div>
@@ -75,9 +77,10 @@
                         <div class="carousel-text">
                             <h1>Expertos en medicina</h1>
                             <div class="carousel-btn">
-                                <a class="btn" href="">Iniciar Sesión</a>
-                                <a class="btn" href="">Registrarse</a>
+                                <a class="btn" onclick="abrirRegistro()" href="">Iniciar Sesión</a>
+                                <a class="btn" onclick="abrirRegistro()" href="">Registrarse</a>
                             </div>
+                            
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -87,8 +90,8 @@
                         <div class="carousel-text">
                             <h1>Siempre cuidando de ti</h1>
                             <div class="carousel-btn">
-                                <a class="btn" href="">Iniciar Sesión</a>
-                                <a class="btn" href="">Registrarse</a>
+                                <a class="btn" onclick="abrirRegistro()" href="">Iniciar Sesión</a>
+                                <a class="btn"onclick="abrirRegistro()" href="">Registrarse</a>
 
                             </div>
                         </div>
@@ -124,25 +127,25 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="fact-item">
                             <img src="img/icon-4.png" alt="Icon">
-                            <h2>Qualified Team</h2>
+                            <h2>Personal Calificado</h2>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="fact-item">
-                            <img src="img/icon-1.png" alt="Icon">
-                            <h2>Individual Approach</h2>
+                            <img src="img/capsules.png" alt="Icon">
+                            <h2>Medicamento de alta calidad</h2>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="fact-item">
-                            <img src="img/icon-8.png" alt="Icon">
-                            <h2>100% Success</h2>
+                            <img src="img/healthcare.png" alt="Icon">
+                            <h2>100% Confiables</h2>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="fact-item">
-                            <img src="img/icon-6.png" alt="Icon">
-                            <h2>100% Satisfaction</h2>
+                            <img src="img/health-insurance.png" alt="Icon">
+                            <h2>Comprometidos con tu salud</h2>
                         </div>
                     </div>
                 </div>
@@ -184,421 +187,32 @@
 
 
         <!-- Service Start -->
-        <div class="service">
-            <div class="container">
-                <div class="section-header">
-                    <p>Consulting Services</p>
-                    <h2>Our Best Consulting Services</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="service-item">
-                            <img src="img/icon-1.png" alt="Icon">
-                            <h3>Business Strategy</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium ornare velit non
-                            </p>
-                            <a href="">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="service-item">
-                            <img src="img/icon-2.png" alt="Icon">
-                            <h3>Project Management</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium ornare velit non
-                            </p>
-                            <a href="">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="service-item">
-                            <img src="img/icon-3.png" alt="Icon">
-                            <h3>Market Research</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium ornare velit non
-                            </p>
-                            <a href="">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="service-item">
-                            <img src="img/icon-4.png" alt="Icon">
-                            <h3>Human Resource</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium ornare velit non
-                            </p>
-                            <a href="">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="service-item">
-                            <img src="img/icon-5.png" alt="Icon">
-                            <h3>Online Business</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium ornare velit non
-                            </p>
-                            <a href="">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="service-item">
-                            <img src="img/icon-6.png" alt="Icon">
-                            <h3>Capital Management</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium ornare velit non
-                            </p>
-                            <a href="">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="service-item">
-                            <img src="img/icon-7.png" alt="Icon">
-                            <h3>Business Insurance</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium ornare velit non
-                            </p>
-                            <a href="">Read More</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="service-item">
-                            <img src="img/icon-8.png" alt="Icon">
-                            <h3>Online Marketing</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium ornare velit non
-                            </p>
-                            <a href="">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- Service End -->
 
 
         <!-- Feature Start -->
-        <div class="feature">
-            <div class="container">
-                <div class="row align-items-end">
-                    <div class="col-md-6">
-                        <div class="feature-img">
-                            <img src="img/business-man.png" alt="Image">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="section-header">
-                            <p>Our Feature</p>
-                            <h2>Why Choose Us?</h2>
-                        </div>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus 
-                        </p>
-                        <div class="row counters">
-                            <div class="col-6">
-                                <i class="fa fa-user"></i>
-                                <div class="counters-text">
-                                    <h2 data-toggle="counter-up">100</h2>
-                                    <p>Our Staffs</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <i class="fa fa-users"></i>
-                                <div class="counters-text">
-                                    <h2 data-toggle="counter-up">200</h2>
-                                    <p>Our Clients</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <i class="fa fa-check"></i>
-                                <div class="counters-text">
-                                    <h2 data-toggle="counter-up">300</h2>
-                                    <p>Completed Projects</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <i class="fa fa-running"></i>
-                                <div class="counters-text">
-                                    <h2 data-toggle="counter-up">400</h2>
-                                    <p>Running Projects</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <!-- Feature End -->
         
         
         <!-- Testimonial Start -->
-        <div class="testimonial">
-            <div class="container">
-                <div class="section-header">
-                    <p>Testimonial Carousel</p>
-                    <h2>100% Positive Customer Reviews</h2>
-                </div>
-                <div class="owl-carousel testimonials-carousel">
-                    <div class="testimonial-item">
-                        <img src="img/testimonial-1.jpg" alt="Image">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac consequat
-                        </p>
-                        <h2>Client Name</h2>
-                        <h3>Profession</h3>
-                    </div>
-                    <div class="testimonial-item">
-                        <img src="img/testimonial-2.jpg" alt="Image">
-                        <p>
-                            Phasellus pellentesque tempus pretium. Quisque in enim sit amet purus venenatis porttitor sed non velit. Vivamus vehicula finibus
-                        </p>
-                        <h2>Client Name</h2>
-                        <h3>Profession</h3>
-                    </div>
-                    <div class="testimonial-item">
-                        <img src="img/testimonial-3.jpg" alt="Image">
-                        <p>
-                            Sed in lectus eu eros tincidunt cursus. Aliquam eleifend velit nisl. Sed et posuere urna, ut vestibulum massa. Integer quis magna
-                        </p>
-                        <h2>Client Name</h2>
-                        <h3>Profession</h3>
-                    </div>
-                    <div class="testimonial-item">
-                        <img src="img/testimonial-4.jpg" alt="Image">
-                        <p>
-                            Sed in lectus eu eros tincidunt cursus. Aliquam eleifend velit nisl. Sed et posuere urna, ut vestibulum massa. Integer quis magna
-                        </p>
-                        <h2>Client Name</h2>
-                        <h3>Profession</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <!-- Testimonial End -->
 
 
         <!-- Team Start -->
-        <div class="team">
-            <div class="container">
-                <div class="section-header">
-                    <p>Meet Our Advisors</p>
-                    <h2>Our Professional Consulting Team</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Donald John</h2>
-                                <p>Founder & CEO</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Adam Phillips</h2>
-                                <p>Chef Executive</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Thomas Olsen</h2>
-                                <p>Chef Advisor</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>James Alien</h2>
-                                <p>Advisor</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- Team End -->
         
         
         <!-- Contact Start -->
-        <div class="contact">
-            <div class="container">
-                <div class="section-header">
-                    <p>Get In Touch</p>
-                    <h2>Get In Touch For Any Query</h2>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-md-5">
-                        <div class="contact-info">
-                            <div class="contact-icon">
-                                <i class="fa fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Our Head Office</h3>
-                                <p>123 Street, New York, USA</p>
-                            </div>
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-icon">
-                                <i class="fa fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Call for Help</h3>
-                                <p>+012 345 6789</p>
-                            </div>
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-icon">
-                                <i class="fa fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h3>Email for Information</h3>
-                                <p>info@example.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-7">
-                        <div class="contact-form">
-                            <div id="success"></div>
-                            <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                                <div class="control-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="control-group">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="control-group">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="control-group">
-                                    <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div>
-                                    <button class="btn" type="submit" id="sendMessageButton">Send Message</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
         <!-- Contact End -->
 
 
         <!-- Blog Start -->
-        <div class="blog">
-            <div class="container">
-                <div class="section-header">
-                    <p>Consulting Blog</p>
-                    <h2>Latest From Our Consulting Blog</h2>
-                </div>
-                <div class="owl-carousel blog-carousel">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/blog-1.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-content">
-                            <h2 class="blog-title">Lorem ipsum dolor sit amet</h2>
-                            <div class="blog-meta">
-                                <i class="fa fa-list-alt"></i>
-                                <a href="">Category</a>
-                                <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
-                            </div>
-                            <div class="blog-text">
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor. Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                                </p>
-                                <a class="btn" href="">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/blog-2.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-content">
-                            <h2 class="blog-title">Lorem ipsum dolor sit amet</h2>
-                            <div class="blog-meta">
-                                <i class="fa fa-list-alt"></i>
-                                <a href="">Category</a>
-                                <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
-                            </div>
-                            <div class="blog-text">
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor. Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                                </p>
-                                <a class="btn" href="">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/blog-3.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-content">
-                            <h2 class="blog-title">Lorem ipsum dolor sit amet</h2>
-                            <div class="blog-meta">
-                                <i class="fa fa-list-alt"></i>
-                                <a href="">Category</a>
-                                <i class="fa fa-calendar-alt"></i>
-                                <p>01-Jan-2045</p>
-                            </div>
-                            <div class="blog-text">
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor. Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                                </p>
-                                <a class="btn" href="">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+ 
         <!-- Blog End -->
 
 
@@ -610,9 +224,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="footer-contact">
-                                    <h2>Our Head Office</h2>
-                                    <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
-                                    <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
+                                    <h2>Nuestra oficina central</h2>
+                                    <p><i class="fa fa-map-marker-alt"></i>11 Avenida, Cdad. de Guatemala 01012. Guatemala</p>
+                                    <p><i class="fa fa-phone-alt"></i>+502 2418 8000</p>
                                     <p><i class="fa fa-envelope"></i>info@example.com</p>
                                     <div class="footer-social">
                                         <a href=""><i class="fab fa-twitter"></i></a>
@@ -623,7 +237,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <!--<div class="col-md-6">
                                 <div class="footer-link">
                                     <h2>Quick Links</h2>
                                     <a href="">Terms of use</a>
@@ -632,10 +246,10 @@
                                     <a href="">Help</a>
                                     <a href="">FQAs</a>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
-                    <div class="col-lg-5">
+                    <!--<div class="col-lg-5">
                         <div class="footer-newsletter">
                             <h2>Newsletter</h2>
                             <p>
@@ -646,16 +260,16 @@
                                 <button class="btn">Submit</button>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div>-->
+                               </div>
             </div>
             <div class="container copyright">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                        <p>&copy; <a href="#">UHospital, All Right Reserved.</a></p>
                     </div>
                     <div class="col-md-6">
-                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                        <p>Designed By <a href="https://htmlcodex.com"></a></p>
                     </div>
                 </div>
             </div>
@@ -663,6 +277,7 @@
         <!-- Footer End -->
 
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+         
 
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

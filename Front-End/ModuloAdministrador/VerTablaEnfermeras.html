@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla Enfermeras | UHospital</title>
+	<!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/413a5a0e1a.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.5/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>	
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+     <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+<body onload="CargarTablaEnfermeras()">
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong>UHospital</strong></a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">  
+                        <li class="divider"></li>
+                        <li><a href="../RegistroPacientes/index.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
+                        </li>
+                    </ul>
+                  
+                </li>
+            
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a href="index.html"><i class="fa fa-dashboard"></i>Inicio</a>
+                    </li>
+                    <li>
+                        <a href="CargaPacientes.html" ><i class="fas fa-file-upload"></i>Cargar Pacientes</a>
+                    </li>
+					<li>
+                        <a href="CargaDoctores.html" ><i class="fas fa-file-upload"></i>Cargar Médicos</a>
+                    </li>
+                    <li>
+                        <a href="CargaEnfermeras.html"><i class="fas fa-file-upload"></i>Cargar Enfermeras</a>
+                    </li>
+                    
+                    <li>
+                        <a href="CargaMedicina.html"><i class="fas fa-file-upload"></i>Cargar Medicamentos</a>
+                    </li>
+
+
+                    <li>
+                        <a href="#"><i class="fas fa-table"></i>Ver tablas<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                        <a href="VerTablaPacientes.html" ><i class="fas fa-hospital-user"></i>Ver tabla Pacientes</a>
+                            </li>
+                            <li>
+                                <a href="VerTablaDoctores.html"><i class="fas fa-user-md"></i>Ver tabla médicos</a>
+                            </li>
+                            <li>
+                                <a href="VerTablaEnfermeras.html"class="active-menu"><i class="fas fa-user-nurse"></i>Ver tabla enfermeras</a>
+                            </li>
+                            <li>
+                                <a href="VerTablaMedicina.html"><i class="fas fa-pills"></i>Ver tabla medicamentos</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper2" >
+		  <div class="header"> 
+                        <h1 class="page-header">
+                         Tabla Enfermeras <small></small>
+                        </h1>
+					
+									
+		</div>
+		
+            <div id="page-inner"> 
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Género</th>
+                            <th scope="col">Fecha de Nacimiento</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody id="ContenidoEnfermeras">
+    
+                        </tbody>
+                      </table>
+                    </div>
+               <!--POPUP VER ENFERMERA-->
+               <div class="modal fade" id="PopVerEnfermera" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title"  id="exampleModalLongTitle">Detalles</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                       
+                        <div class="container">
+                           
+                              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+                                <div class="panel panel-primary">
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title" id="tituloEnfermera"></h3>
+                                  </div>
+                                  <div class="panel-body">
+                                    <div class="row">
+                                      <div class=" col-md-9 col-lg-9 ">
+                                        <table class="table table-user-information">
+                                          <tbody>
+                                            <tr>
+                                              <td>Nombre:</td>
+                                              <td id="infoNameE"></td>
+                                            </tr>
+                                            <tr>
+                                              <td >Apellido:</td>
+                                              <td id ="infoApellidoE"></td>
+                                            </tr>
+                                            <tr>
+                                              <td>Fecha de Nacimiento:</td>
+                                              <td id="infoFechaE">
+                                                
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <tr>
+                                                <td>Género:</td>
+                                                <td id="infoGeneroE"></td>
+                                              </tr>
+                                              <tr>
+                                                <td>Teléfono:</td>
+                                                <td id="infoTelE"></td>
+                                              </tr>
+                                              <tr>
+                                                <td>Nombre de Usuario:</td>
+                                                <td id="infoUserE"></td>
+                                              </tr>
+                                             
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+<!--AQUI TERMINA POPUP-->
+<!--aqui comienza modificar enfermera-->
+<div class="modal fade" id="PopModificarEnfermera" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div id ="popModificar1"class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"  id="exampleModalLongTitle">Modificar Enfermera</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="popModificar2"class="modal-body">
+        <div class="row gutters">
+          <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+          <div class="card h-100">
+              <div class="card-body">
+                  <div class="row gutters">
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                          <h6 class="mb-2 text-primary">Modificar Datos</h6>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                          <div class="form-group">
+                              <label for="fullName">Nombre</label>
+                              <input type="text" class="form-control" id="INombreNuevoET" placeholder="Ingrese su nombre">
+                          </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                          <div class="form-group">
+                              <label for="eMail">Apellido</label>
+                              <input type="text" class="form-control" id="IApellidoNuevoET" placeholder="Ingrese su apellido">
+                          </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="phone">Numero de teléfono</label>
+                            <input type="text" class="form-control" id="ITelNuevoET" placeholder="Ingrese su numero de teléfono">
+                        </div>
+                    </div>
+
+                      <div id ="fechanac"class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">				
+                          <div class="form-group">
+          <label for="Fecha">Fecha de Nacimiento</label>			
+                              <input   type="number" min="1" max="31" id="InputDiaNuevoET" placeholder="Día">
+                              
+
+          <select aria-label=".form-select-sm example" name="Mes" id="MesNuevoET" required>
+            <option value="01">Enero</option>
+            <option value="02">Febrero</option>
+            <option value="03">Marzo</option>
+            <option value="04">Abril</option>
+            <option value="05">Mayo</option>
+            <option value="06">Junio</option>
+            <option value="07">Julio</option>
+            <option value="08">Agosto</option>
+            <option value="09">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+          </select>
+            <input type="number"  id="InputAñoNuevoET"placeholder="Año">
+       </div>
+  </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                          <div class="form-group">
+                              <label for="eMail">Usuario</label>
+                              <input type="text" class="form-control" id="IUsuarioNuevoET" placeholder="Ingresar nuevo nombre de usuario">
+                          </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                          <div class="form-group">
+                              <label for="eMail">Nueva Contraseña</label>
+                              <input type="password" class="form-control" id="IContraseñaNuevaET" placeholder="Ingrese nueva contraseña">
+                          </div>
+                      </div>
+                 
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+      <div class="form-group">
+        <label for="genero">Género</label>
+        <select class="form-control" aria-label=".form-select-sm example" name="Genero" id="GeneroNuevoET" required>
+          <option value="" disabled selected>Elija una opción</option>
+
+          <option value="M">Hombre</option>
+          <option value="F">Mujer</option>
+
+          </select>						
+            </div>
+    </div>
+  </div>
+          
+</div>
+                  <div class="row gutters">
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                          <div class="text-right">
+                              <button type="button" id="BotonGuardarPacienteT" onclick="accionBotonModificarEnfermera()"name="Guardar" class="btn btn-primary">Guardar
+          
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+<button id="BotonPDFEnfer"type="button"onclick="CrearPDFEnfermeras()" class="btn btn-danger"><i class="fas fa-file-pdf"></i> Generar PDF </button>
+
+<!--aqui termina mpopu modificar-->
+			<footer></footer>
+			</div>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/FuncionesAdministrador.js"></script>
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+    
+   
+</body>
+</html>
