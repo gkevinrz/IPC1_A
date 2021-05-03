@@ -153,7 +153,6 @@ function cargarcitasenfermera(){
           <td>${data2[i].MotivoCita}</td>
           <td>
           <select id="Combo${i}"> 
-                 <option id="1" value="Hola">hola</option>
              </select>
           </td>
           <td>
@@ -168,7 +167,7 @@ function cargarcitasenfermera(){
        `}
       document.getElementById("TablaCitasPendientes").innerHTML = HtmlTextoTablaMedicina2; 
       
-      
+      cargardoctores(cantidadcitas)
 
      })
      

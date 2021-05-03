@@ -4,9 +4,9 @@ import re
 class GestorMedicamentos:
     def __init__(self):
         self.ArrayMedicamentos=[]
-        self.ArrayMedicamentos.append(Medicamentos('Ibu',5,'Quita dolor de cabeza',30))
-        self.ArrayMedicamentos.append(Medicamentos('Ibu2',4,'Quita dolor de cabeza2',40))
-        self.ArrayMedicamentos.append(Medicamentos('Ibu3',2,'Quita dolor de cabeza3',50))
+        #self.ArrayMedicamentos.append(Medicamentos('Ibu',5,'Quita dolor de cabeza',30))
+        #self.ArrayMedicamentos.append(Medicamentos('Ibu2',4,'Quita dolor de cabeza2',40))
+        #self.ArrayMedicamentos.append(Medicamentos('Ibu3',2,'Quita dolor de cabeza3',50))
 
 
     def VerMedicamentos(self):
