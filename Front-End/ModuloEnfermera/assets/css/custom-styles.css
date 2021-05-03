@@ -47,6 +47,16 @@ body {
     font-family: 'Open Sans', sans-serif;
     background: #1F1F1F;
 }
+.btn-success{
+    position: relative;
+    width: 100px;
+    left:50px;
+}
+.btn-danger{
+    position: relative;
+    width: 100px;
+    left:50px;
+}
 
  #wrapper {
     width: 100%;
@@ -83,15 +93,25 @@ body {
         color: #fff;
         z-index: 2;
         }
+     .card-body{
+         margin-top:20px;
+         margin-left:180px;
+     }
       .banner {
         position: relative;
         height: 260px;
-  background-color:#2471A3;
+        background-color:#212F3D;
         background-size: cover;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
+        }
+        .btn-block{
+            margin-left: -40px;
+        }
+        #totalfactura{
+            margin-left: 150px;
         }
         .banner::after {
             content: "";
@@ -101,12 +121,12 @@ body {
             height: 100%;
             }
       #FormSolicitarCita {
-        width: 50%;
+        width: 100%;
         height: 50%;
         padding: 20px;
         border-radius: 6px;
         background: #fff;
-        box-shadow: 0 0 15px 0 #3263cd; 
+        box-shadow: 0 0 15px 0 #E74C3C; 
         }
         input, select, textarea {
             margin-bottom: 10px;
@@ -133,10 +153,7 @@ body {
             box-shadow: 0 0 5px 0 #3263cd;
             color: #3263cd;
             }
-            .item {
-            position: relative;
-            margin: 10px 0;
-            }
+           
             input[type="date"]::-webkit-inner-spin-button {
             display: none;
             }

@@ -21,15 +21,13 @@ class GestorVendido:
         return False
                            
 
-
-
-        
-
-
-
-
+    def OrdenarArray(self):
+        listanueva=sorted(self.ArrayVendidos, key=lambda x: x.CantidadVendida,reverse=True)
+        return json.dumps([Nuevo.__dict__ for Nuevo in listanueva])
+        # return json.dumps(Vendido.__dict__ for Vendido in self.ArrayVendidos)
 
     def VerRegistroPedidos(self):
         return json.dumps([Registro.__dict__ for Registro in self.ArrayVendidos])
+
 
 

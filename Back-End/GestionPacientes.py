@@ -5,6 +5,8 @@ class GestorPacientes:
     def __init__(self):
         self.ArrayPacientes=[]
         self.ArrayPacientes.append(Pacientes('v','s','07/07/2002','M','Kev1','123','3'))
+        self.ArrayPacientes.append(Pacientes('v','s','07/07/2002','M','Kev2','123','3'))
+
 
     def InsertarPaciente(self,NombreP,ApellidoP,FechaP,GeneroP,UserP,PasswordP,TelefonoP):
         Paciente_nuevo= Pacientes(NombreP,ApellidoP,FechaP,GeneroP,UserP,PasswordP,TelefonoP)

@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generar Factura | UHospital</title>
+	<!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+     <!-- Google Fonts-->
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <script src="https://kit.fontawesome.com/413a5a0e1a.js" crossorigin="anonymous"></script>
+   <link rel="icon" href="assets/img/IconoUH.ico" type="image/icon" sizes="16x16">
+
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong>UHospital</strong></a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+         
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">  
+                        <li class="divider"></li>
+                        <li><a href="ModificarPerfil.html"><i class="fas fa-user-edit"></i> Modificar Perfil</a></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Cerrar Sesión</a>
+
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="main-menu">
+    
+                        <li>
+                            <a href="index.html"><i class="fas fa-home"></i></i> Inicio</a>
+                        </li>
+                        <li>
+                            <a href="VerCitas.html"><i class="fa fa-desktop"></i>Ver citas </a>
+                        </li>
+                        <li>
+                            <a href="VerCitasAceptadas.html"><i class="fas fa-shopping-cart"></i>Ver citas aceptadas</a>
+                        </li>
+                      
+                        <li>
+                            <a class="active-menu"  href="GenerarFactura.html"><i class="fa fa-table"></i>Generar Factura</a>
+                        </li>
+    
+                    </ul>
+    
+                </div>
+    
+            </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+		  <div class="header"> 
+            <div class="jumbotron">
+                <h1>Factura <small> UHospital</small></h1>
+                <p>Formulario para generar factura</p>
+              </div>	
+		</div>
+            <div id="page-inner"> 
+                <div class="testbox">
+          
+                    <form id="FormSolicitarCita">
+             
+                           <div class="banner">
+    
+                             <h1 id="Titulo">Nueva Factura</h1>
+                           </div>
+              
+                           <div class="row gutters">
+                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="row gutters">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label for="fecha">Fecha</label>
+                                                <input type="date" class="form-control" id="FechaFactura" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label for="nombrepaciete">Nombre del Paciente</label>
+                                                <input type="text" class="form-control" id="INombrePaciente" placeholder="Ingrese nombre" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label for="doctor">Doctor</label>
+                                                <select class="form-control" aria-label=".form-select-sm example" name="doctor" id="IDoctor" required>
+                                                    <option value="01">Enero</option>
+                                               
+                                                  </select>
+                                                 </div>
+                                        </div>
+        
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">				
+                                            <div class="form-group">
+                                                <label for="precioConsulta">Precio de la consulta</label>			
+                                                <input type="text" class="form-control" id="IPrecioConsulta" placeholder="Q" required>
+
+                        </div>
+                    </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label for="operacion">Costo de la operación</label>
+                                                <input type="text" class="form-control" id="IPrecioOperacion" placeholder="Q" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label for="internado">Costo internado</label>
+                                                <input type="text" class="form-control" id="IPrecioInternado" placeholder="Q">
+                                            </div>
+                                        </div>
+                                   
+                                        <div id="totalfactura" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label for="total">Total</label>
+                                                <input type="text" class="form-control" id="ITotal" placeholder="Q">
+                                            </div>
+                                        </div>
+                                </div>
+                            
+                            </div>
+                                </div>
+                            </div>
+                            </div>
+                           <div class="btn-block">
+                             <button type="submit" >Generar</button>
+                       </div>
+                       </form>
+                     </div>
+				</div>
+
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>	
+<script src="sweetalert2.all.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="assets/js/jquery-1.10.2.js"></script>
+
+    <script src="assets/js/FuncionesModEnfermera.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+ 
+</body>
+</html>

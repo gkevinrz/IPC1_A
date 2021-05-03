@@ -14,13 +14,15 @@
      <!-- Google Fonts-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
    <script src="https://kit.fontawesome.com/413a5a0e1a.js" crossorigin="anonymous"></script>
-
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>	
+   <script src="sweetalert2.all.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 
 </head>
-<body onload="ModificarPerfilP()">
+<body onload="ModificarPerfilD()">
     <div id="wrapper">
 		<nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -52,30 +54,30 @@
             </ul>
         </nav>
         <!--/. NAV TOP  -->
-		<nav class="navbar-default navbar-side" role="navigation">
-			<div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
-				<div class="sidebar-collapse">
-					<ul class="nav" id="main-menu">
-	
-						<li>
-							<a class="active-menu" href="index.html"><i class="fas fa-home"></i></i> Inicio</a>
-						</li>
-						<li>
-							<a href="SolicitarCita.html"><i class="fa fa-desktop"></i>Solicitar Cita </a>
-						</li>
-						<li>
-							<a href="ComprarMedicina.html"><i class="fas fa-shopping-cart"></i>Comprar Medicamentos</a>
-						</li>
-					  
-						<li>
-							<a href="VerPedido.html"><i class="fa fa-table"></i>Ver Pedido</a>
-						</li>
-	
-					</ul>
-	
-				</div>
-	
-			</nav>
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="main-menu">
+    
+                        <li>
+                            <a href="index.html"><i class="fas fa-home"></i></i> Inicio</a>
+                        </li>
+                        <li>
+                            <a   href="CrearReceta.html"><i class="fa fa-desktop"></i>Crear Receta </a>
+                        </li>
+                        <li>
+                            <a  href="VerCitas.html"><i class="fa fa-table"></i>Ver Citas</a>
+                        </li>
+                      
+                        <li>
+                            <a  href="VerAsignaciones.html"><i class="fa fa-table"></i>Citas Asignadas</a>
+                        </li>
+    
+                    </ul>
+    
+                </div>
+    
+            </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
 		  <div class="header"> 
@@ -85,96 +87,91 @@
 			</div>
             <div id="page-inner"> 
                 <div class="row gutters">
-                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="row gutters">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h6 class="mb-2 text-primary">Modificar Datos</h6>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label for="fullName">Nombre</label>
-                                        <input type="text" class="form-control" id="INombreNuevo" placeholder="Ingrese su nombre">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label for="eMail">Apellido</label>
-                                        <input type="text" class="form-control" id="IApellidoNuevo" placeholder="Ingrese su apellido">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label for="phone">Numero de teléfono</label>
-                                        <input type="text" class="form-control" id="ITelNuevo" placeholder="Ingrese su numero de teléfono">
-                                    </div>
-                                </div>
-
-                                <div id ="fechanac"class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">				
-                                    <div class="form-group">
-										<label for="Fecha">Fecha de Nacimiento</label>			
-                                        <input  class="form-control" type="number" min="1" max="31" id="InputDiaNuevo" placeholder="Día">
-                    <select class="form-control" aria-label=".form-select-sm example" name="Mes" id="MesNuevo" required>
-                      <option value="01">Enero</option>
-                      <option value="02">Febrero</option>
-                      <option value="03">Marzo</option>
-                      <option value="04">Abril</option>
-                      <option value="05">Mayo</option>
-                      <option value="06">Junio</option>
-                      <option value="07">Julio</option>
-                      <option value="08">Agosto</option>
-                      <option value="09">Septiembre</option>
-                      <option value="10">Octubre</option>
-                      <option value="11">Noviembre</option>
-                      <option value="12">Diciembre</option>
-                    </select>
-                    <input class="form-control"type="number"  id="InputAñoNuevo"placeholder="Año">
-				</div>
-			</div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label for="eMail">Usuario</label>
-                                        <input type="text" class="form-control" id="IUsuarioNuevo" placeholder="Ingresar nuevo nombre de usuario">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label for="eMail">Nueva Contraseña</label>
-                                        <input type="password" class="form-control" id="IContraseñaNueva" placeholder="Ingrese nueva contraseña">
-                                    </div>
-                                </div>
-                           
-							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-								<div class="form-group">
-									<label for="genero">Género</label>
-									<select class="form-control" aria-label=".form-select-sm example" name="Genero" id="GeneroNuevo" required>
-										<option value="" disabled selected>Elija una opción</option>
-
-										<option value="M">Hombre</option>
-										<option value="F">Mujer</option>
-				
-									  </select>						
-											</div>
-							</div>
-						</div>
-                    
-					</div>
-   
-				
-				
-                            <div class="row gutters">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <div class="text-right">
-                                        <button type="button" id="submit" onclick="botonModificarP()" name="Guardar" class="btn btn-primary">Guardar
-                    
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h6 class="mb-2 text-primary">Modificar Datos</h6>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="fullName">Nombre</label>
+                            <input type="text" class="form-control" id="INombreNuevoD" placeholder="Ingrese su nombre">
                         </div>
                     </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="eMail">Apellido</label>
+                            <input type="text" class="form-control" id="IApellidoNuevoD" placeholder="Ingrese su apellido">
+                        </div>
                     </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="phone">Numero de teléfono</label>
+                            <input type="text" class="form-control" id="ITelNuevoD" placeholder="Ingrese su numero de teléfono">
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="phone">Especialidad</label>
+                            <input type="text" class="form-control" id="IEspeciNuevoD" placeholder="Especialidad">
+                        </div>
+                    </div>
+                    <div id ="fechanac"class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">				
+                        <div class="form-group">
+        <label for="Fecha">Fecha de Nacimiento</label>			
+                            <input   type="number" min="1" max="31" id="InputDiaNuevoD" placeholder="Día">
+                            
+
+        <select aria-label=".form-select-sm example" name="Mes" id="MesNuevoD" required>
+          <option value="01">Enero</option>
+          <option value="02">Febrero</option>
+          <option value="03">Marzo</option>
+          <option value="04">Abril</option>
+          <option value="05">Mayo</option>
+          <option value="06">Junio</option>
+          <option value="07">Julio</option>
+          <option value="08">Agosto</option>
+          <option value="09">Septiembre</option>
+          <option value="10">Octubre</option>
+          <option value="11">Noviembre</option>
+          <option value="12">Diciembre</option>
+        </select>
+          <input type="number"  id="InputAñoNuevoD"placeholder="Año">
+     </div>
+</div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="eMail">Usuario</label>
+                            <input type="text" class="form-control" id="IUsuarioNuevoD" placeholder="Ingresar nuevo nombre de usuario">
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label for="eMail">Nueva Contraseña</label>
+                            <input type="password" class="form-control" id="IContraseñaNuevaD" placeholder="Ingrese nueva contraseña">
+                        </div>
+                    </div>
+               
+  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+      <label id="lbGenero"for="genero">Género</label>
+      <select class="form-control" aria-label=".form-select-sm example" name="Genero" id="GeneroNuevoD" required>
+        <option value="" disabled selected>Elija una opción</option>
+
+        <option value="M">Hombre</option>
+        <option value="F">Mujer</option>
+
+        </select>						
+          </div>
+  </div>
+</div>
+<div class="row gutters">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="text-right">
+            <button type="button" id="BotonGuardarDoctorT" onclick="botonModificarD()"name="Guardar" class="btn btn-primary">Guardar
+
+            </button>
+        </div>
+    </div>
+</div>
                     </div>
 				</div>
              <!-- /. PAGE INNER  -->
@@ -184,7 +181,7 @@
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="assets/js/FuncionesModPaciente.js"></script>
+    <script src="assets/js/FuncionesModDoctor.js"></script>
     <script src="assets/js/jquery-1.10.2.js"></script>
       <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>

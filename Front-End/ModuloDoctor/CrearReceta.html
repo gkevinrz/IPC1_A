@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solicitar Cita | UHospital</title>
+    <title>Crear Receta | UHospital</title>
 	<!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -18,7 +18,7 @@
    <link rel="icon" href="assets/img/IconoUH.ico" type="image/icon" sizes="16x16">
 
 </head>
-<body onload="CargarCitas()">
+<body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -59,14 +59,14 @@
                             <a href="index.html"><i class="fas fa-home"></i></i> Inicio</a>
                         </li>
                         <li>
-                            <a  class="active-menu" href="SolicitarCita.html"><i class="fa fa-desktop"></i>Solicitar Cita </a>
+                            <a  class="active-menu" href="CrearReceta.html"><i class="fa fa-desktop"></i>Crear Receta </a>
                         </li>
                         <li>
-                            <a href="ComprarMedicina.html"><i class="fas fa-shopping-cart"></i>Comprar Medicamentos</a>
+                            <a  href="VerCitas.html"><i class="fa fa-table"></i>Ver Citas</a>
                         </li>
                       
                         <li>
-                            <a href="VerPedido.html"><i class="fa fa-table"></i>Ver Pedido</a>
+                            <a   href="VerAsignaciones.html"><i class="fa fa-table"></i>Citas Asignadas</a>
                         </li>
     
                     </ul>
@@ -78,51 +78,72 @@
         <div id="page-wrapper">
 		  <div class="header"> 
                         <h1 class="page-header">
-                           Formulario para cita médica<small></small>
+                           Formulario para receta médica<small></small>
                         </h1>		
 		</div>
             <div id="page-inner"> 
-              <div class="panel panel-default">
-              <!----><div class="panel-heading">Listado de Citas</div>
+                <div class="testbox">
+          
+                    <form id="CrearReceta">
+             
+                           <div class="banner">
+    
+                             <h1 id="Titulo">Nueva Receta</h1>
+                           </div>
+              
+                           <div class="row gutters">
+                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="row gutters">
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label for="fecha">Fecha</label>
+                                                <input type="date" class="form-control" id="FechaFactura" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label for="nombrepaciete">Nombre del Paciente</label>
+                                                <input type="text" class="form-control" id="INombrePaciente" placeholder="Ingrese nombre" required>
+                                            </div>
+                                        </div>
+                                       
+        
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">				
+                                            <div class="form-group">
+                                                <label for="padec">Padecimiento</label>			
+                                                <input type="text" class="form-control" id="IPadecimiento" placeholder="Ingresar padecimiento" required>
 
-              <table class="table table-striped">
-                <thead>
-<tr>
-  <th><h4>Motivo</h4></th>
-  <th><h4>Estado</h4></th>
-</tr>
-           </thead>
-           <tbody id="CitasPaciente">
-           
-           
-           </tbody>
-              </table>
-              </div>
-              <!--       -->
-              <div class="testbox">
-             <form id="FormSolicitarCita">
-                    <div class="banner">
-                      <h1 id="Titulo">Solicitar Cita</h1>
+                        </div>
                     </div>
-                    <div class="item">
-                      <p>Fecha</p>
-                      <input id="InputFechaCita" type="date" name="bdate" required/>
-                      <i class="fas fa-calendar-alt"></i>
-                    </div>
-                <div class="item">
-                      <p>Selecciona la hora</p>
-                      <input id="InputHoraCita" type="time" name="bdate" required/>
-                  
-                    </div>
-                    <div class="item">
-                      <p>Motivo</p>
-                      <textarea id="InputMotivoCita"placeholder="Motivo de la cita" rows="3"></textarea>
-                    </div>
-                    <div class="btn-block">
-                      <button type="submit" >Solicitar</button>
-                </div>
-                </form>
-              </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <div class="item">
+                                                    <p>Descripcion</p>
+                                                    <textarea id="InputMotivoCita"placeholder="Descripcion de la receta" rows="5"></textarea>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                       
+                                   
+                                       
+                                </div>
+                            
+                            </div>
+                                </div>
+                            </div>
+                            </div>
+                           <div class="btn-block">
+                     <button id="BotonReceta"type="button" onclick="CrearPDFReceta()" class="btn btn-danger"><i class="fas fa-file-pdf"></i> Crear PDF</button>
+
+                             <button type="submit"onclick >Crear Receta</button>
+                       </div>
+                    </form>
+                     </div>
+                    
 				</div>
 
              <!-- /. PAGE INNER  -->
@@ -137,7 +158,7 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="assets/js/jquery-1.10.2.js"></script>
 
-    <script src="assets/js/FuncionesModPaciente.js"></script>
+    <script src="assets/js/FuncionesModDoctor.js"></script>
       <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- Metis Menu Js -->

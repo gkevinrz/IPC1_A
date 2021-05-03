@@ -16,11 +16,14 @@
    <script src="https://kit.fontawesome.com/413a5a0e1a.js" crossorigin="anonymous"></script>
 
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>	
+   <script src="sweetalert2.all.min.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
 </head>
-<body onload="ModificarPerfilP()">
+<body onload="ModificarPerfilE()">
     <div id="wrapper">
 		<nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -52,30 +55,30 @@
             </ul>
         </nav>
         <!--/. NAV TOP  -->
-		<nav class="navbar-default navbar-side" role="navigation">
-			<div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
-				<div class="sidebar-collapse">
-					<ul class="nav" id="main-menu">
-	
-						<li>
-							<a class="active-menu" href="index.html"><i class="fas fa-home"></i></i> Inicio</a>
-						</li>
-						<li>
-							<a href="SolicitarCita.html"><i class="fa fa-desktop"></i>Solicitar Cita </a>
-						</li>
-						<li>
-							<a href="ComprarMedicina.html"><i class="fas fa-shopping-cart"></i>Comprar Medicamentos</a>
-						</li>
-					  
-						<li>
-							<a href="VerPedido.html"><i class="fa fa-table"></i>Ver Pedido</a>
-						</li>
-	
-					</ul>
-	
-				</div>
-	
-			</nav>
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="main-menu">
+    
+                        <li>
+                            <a class="active-menu" href="index.html"><i class="fas fa-home"></i></i> Inicio</a>
+                        </li>
+                        <li>
+                            <a href="VerCitas.html"><i class="fa fa-desktop"></i>Ver citas </a>
+                        </li>
+                        <li>
+                            <a href="VerCitasAceptadas.html"><i class="fas fa-shopping-cart"></i>Ver citas aceptadas</a>
+                        </li>
+                      
+                        <li>
+                            <a href="GenerarFactura.html"><i class="fa fa-table"></i>Generar Factura</a>
+                        </li>
+    
+                    </ul>
+    
+                </div>
+    
+            </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
 		  <div class="header"> 
@@ -95,27 +98,27 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="fullName">Nombre</label>
-                                        <input type="text" class="form-control" id="INombreNuevo" placeholder="Ingrese su nombre">
+                                        <input type="text" class="form-control" id="INombreNuevoE" placeholder="Ingrese su nombre">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="eMail">Apellido</label>
-                                        <input type="text" class="form-control" id="IApellidoNuevo" placeholder="Ingrese su apellido">
+                                        <input type="text" class="form-control" id="IApellidoNuevoE" placeholder="Ingrese su apellido">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="phone">Numero de teléfono</label>
-                                        <input type="text" class="form-control" id="ITelNuevo" placeholder="Ingrese su numero de teléfono">
+                                        <input type="text" class="form-control" id="ITelNuevoE" placeholder="Ingrese su numero de teléfono">
                                     </div>
                                 </div>
 
                                 <div id ="fechanac"class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">				
                                     <div class="form-group">
 										<label for="Fecha">Fecha de Nacimiento</label>			
-                                        <input  class="form-control" type="number" min="1" max="31" id="InputDiaNuevo" placeholder="Día">
-                    <select class="form-control" aria-label=".form-select-sm example" name="Mes" id="MesNuevo" required>
+                                        <input  class="form-control" type="number" min="1" max="31" id="InputDiaNuevoE" placeholder="Día">
+                    <select class="form-control" aria-label=".form-select-sm example" name="Mes" id="MesNuevoE" required>
                       <option value="01">Enero</option>
                       <option value="02">Febrero</option>
                       <option value="03">Marzo</option>
@@ -129,26 +132,26 @@
                       <option value="11">Noviembre</option>
                       <option value="12">Diciembre</option>
                     </select>
-                    <input class="form-control"type="number"  id="InputAñoNuevo"placeholder="Año">
+                    <input class="form-control"type="number"  id="InputAñoNuevoE"placeholder="Año">
 				</div>
 			</div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="eMail">Usuario</label>
-                                        <input type="text" class="form-control" id="IUsuarioNuevo" placeholder="Ingresar nuevo nombre de usuario">
+                                        <input type="text" class="form-control" id="IUsuarioNuevoE" placeholder="Ingresar nuevo nombre de usuario">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="eMail">Nueva Contraseña</label>
-                                        <input type="password" class="form-control" id="IContraseñaNueva" placeholder="Ingrese nueva contraseña">
+                                        <input type="password" class="form-control" id="IContraseñaNuevaE" placeholder="Ingrese nueva contraseña">
                                     </div>
                                 </div>
                            
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group">
 									<label for="genero">Género</label>
-									<select class="form-control" aria-label=".form-select-sm example" name="Genero" id="GeneroNuevo" required>
+									<select class="form-control" aria-label=".form-select-sm example" name="Genero" id="GeneroNuevoE" required>
 										<option value="" disabled selected>Elija una opción</option>
 
 										<option value="M">Hombre</option>
@@ -166,7 +169,7 @@
                             <div class="row gutters">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <div class="text-right">
-                                        <button type="button" id="submit" onclick="botonModificarP()" name="Guardar" class="btn btn-primary">Guardar
+                                        <button type="button" id="submit" onclick="botonModificarE()" name="Guardar" class="btn btn-primary">Guardar
                     
                                         </button>
                                     </div>
@@ -184,7 +187,7 @@
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="assets/js/FuncionesModPaciente.js"></script>
+    <script src="assets/js/FuncionesModEnfermera.js"></script>
     <script src="assets/js/jquery-1.10.2.js"></script>
       <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>

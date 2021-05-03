@@ -264,9 +264,18 @@ def CargaMasivaMedicamento():
 #AQUUI TERMINA MODILO ADMINISTRADOR------------------------------
 
 #AQUI EMPIEZA MODULO PACIENTE--------------------------
-@app.route('/VerCitas',methods=['GET'])
-def vercitas():
-    return GestorCitaP.VerCitas()
+@app.route('/VerCitaPaciente/<UserPaciente>',methods=['GET'])
+def vercitapaciente(UserPaciente):
+    return GestorCitaP.VerCitaPaciente(UserPaciente)
+
+
+@app.route('/VerCitasPendientes',methods=['GET'])
+def vercitaspendientes():
+    return GestorCitaP.VerCitasPendientes()
+
+@app.route('/VerCitasAceptadas',methods=['GET'])
+def vercitasaceptadas():
+    return GestorCitaP.VerCitasAceptadas()
 
 @app.route('/SolicitarCita',methods=['POST'])
 def CrearCita():
@@ -277,25 +286,16 @@ def CrearCita():
         if (GestorCitaP.VerificarAceptado(InformacionCita['userPaciente'])):
             return '{"data":"Aceptada"}'
         else:
-            if (GestorCitaP.VerificarCompletada(InformacionCita['userPaciente'])):
-                GestorCitaP.CrearCitaNueva(InformacionCita['userPaciente'],InformacionCita['fechaCita'],InformacionCita['horaCita'],InformacionCita['motivoCita'].upper(),'Pendiente')
-                return '{"data":"Completada"}'
-            else:
-                if (GestorCitaP.VerificarRechazada(InformacionCita['userPaciente'])):
-                    GestorCitaP.CrearCitaNueva(InformacionCita['userPaciente'],InformacionCita['fechaCita'],InformacionCita['horaCita'],InformacionCita['motivoCita'].upper(),'Pendiente')
-                    return '{"data":"Rechazada"}'
-                else:
-                    GestorCitaP.CrearCitaNueva(InformacionCita['userPaciente'],InformacionCita['fechaCita'],InformacionCita['horaCita'],InformacionCita['motivoCita'].upper(),'Pendiente')
-                    return '{"data":"Creada"}'
+            GestorCitaP.CrearCitaNueva(InformacionCita['userPaciente'],InformacionCita['fechaCita'],InformacionCita['horaCita'],InformacionCita['motivoCita'].upper())
+            return '{"data":"Creada"}'
+
+#@app.route('/AceptarCita',methods=['POST'])
+#def AceptarCita():
+    #infoCitaAceptada=request.json
 
 
 
-@app.route('/VerCitaPaciente/<UserPaciente>',methods=['GET'])
-def VerCitaPaciente(UserPaciente):
-    if GestorCitaP.VerCitasPaciente(UserPaciente)==None:
-        return '{"data":"None"}'
-    else:
-        return GestorCitaP.VerCitasPaciente(UserPaciente)
+
                
   #COMPRA MEDICINA
 @app.route('/ComprarMedicina',methods=['POST'])
@@ -393,7 +393,22 @@ def CerrarSesionPaciente():
     return '{"data":"cerrar"}'
  
 
+@app.route('/ReporteMedicamento',methods=['GET'])
+def ReporteMedicamento():
+    return GestorVendidos.OrdenarArray()
+#MODULO ENFERMERA
 
+
+
+#TERMINA MODULO ENFERMERA
+
+
+
+
+#MODULO DOCTOR
+
+
+#TERMINA MODULO DOCTOR
 
 
   

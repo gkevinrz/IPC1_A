@@ -20,7 +20,7 @@
      <!-- Google Fonts-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
-<body onload="CargarMedicina()">
+<body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -61,14 +61,14 @@
                             <a href="index.html"><i class="fas fa-home"></i></i> Inicio</a>
                         </li>
                         <li>
-                            <a   href="SolicitarCita.html"><i class="fa fa-desktop"></i>Solicitar Cita </a>
+                            <a href="VerCitas.html"><i class="fa fa-desktop"></i>Ver citas </a>
                         </li>
                         <li>
-                            <a class="active-menu" href="ComprarMedicina.html"><i class="fas fa-shopping-cart"></i>Comprar Medicamentos</a>
+                            <a class="active-menu"  href="VerCitasAceptadas.html"><i class="fas fa-shopping-cart"></i>Ver citas aceptadas</a>
                         </li>
                       
                         <li>
-                            <a href="VerPedido.html"><i class="fa fa-table"></i>Ver Pedido</a>
+                            <a href="GenerarFactura.html"><i class="fa fa-table"></i>Generar Factura</a>
                         </li>
     
                     </ul>
@@ -79,20 +79,49 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div class="header"> 
-                <h1 class="page-header">
-                   Aquí encontrarás tus medicamentos<small> Farmacia UHospital</small>
-                </h1>		
+            	
 </div>
             <div id="page-inner">              
-                <div  id ="CardsMedicina" class="row">
                 
-                   
-                      
-                  </div>
-              
-                 <!-- /. ROW  -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                      Listado de citas asignadas
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Fecha</th>
+                                        <th>Hora</th>
+                                        <th>Motivo</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="TablaCitasAsignadas">
+                                    <tr>
+                                        <td>
+                                      
+                                                  <input type="checkbox">
+                                                  <span class="checkmark"></span>
         
-                 <!-- /. ROW  -->
+                                           
+                                        </td>
+                                        <td>Prueba</td>
+                                        <td>${data[i].PrecioMedicamento}</td>
+                                        <td>Dolor de cabeza</td>
+                                     
+                                     
+                                    </tr>
+                                    
+                                   
+                                </tbody>
+                               
+                            </table>
+                        </div>
+                    </div>
+                </div>
 				</div>
              <!-- /. PAGE INNER  -->
             </div>
@@ -101,7 +130,7 @@
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="assets/js/FuncionesModPaciente.js"></script>
+    <script src="assets/js/FuncionesModEnfermera.js"></script>
     <script src="assets/js/jquery-1.10.2.js"></script>
       <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paciente | UHospital</title>
+    <title>Doctor | UHospital</title>
     <link rel="icon" href="assets/img/IconoUH.ico" type="image/icon" sizes="16x16">
     <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -53,34 +53,34 @@
         </nav>
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
-		<div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a class="active-menu" href="index.html"><i class="fas fa-home"></i></i> Inicio</a>
-                    </li>
-                    <li>
-                        <a href="SolicitarCita.html"><i class="fa fa-desktop"></i>Solicitar Cita </a>
-                    </li>
-					<li>
-                        <a href="ComprarMedicina.html"><i class="fas fa-shopping-cart"></i>Comprar Medicamentos</a>
-                    </li>
-                  
-                    <li>
-                        <a href="VerPedido.html"><i class="fa fa-table"></i>Ver Pedido</a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </nav>
+            <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="main-menu">
+    
+                        <li>
+                            <a  class="active-menu" href="index.html"><i class="fas fa-home"></i></i> Inicio</a>
+                        </li>
+                        <li>
+                            <a   href="CrearReceta.html"><i class="fa fa-desktop"></i>Crear Receta </a>
+                        </li>
+                        <li>
+                            <a  href="VerCitas.html"><i class="fa fa-table"></i>Ver Citas</a>
+                        </li>
+                      
+                        <li>
+                            <a href="VerAsignaciones.html"><i class="fa fa-table"></i>Citas Asignadas</a>
+                        </li>
+    
+                    </ul>
+    
+                </div>
+    
+            </nav>
         <!-- /. NAV SIDE  -->
       
 		<div id="page-wrapper">
 		  <div class="header"> 
-                        <h1 id="PrincipalPaciente"class="page-header">
+                        <h1 id="PrincipalDoctor"class="page-header">
                          <small> UHospital</small>
                         </h1>
 						<!--<ol class="breadcrumb">
@@ -101,11 +101,9 @@
 
 			
 		
-				<footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez</a></p>
 				
-        
-				</footer>
             </div>
+          
             <!-- /. PAGE INNER  -->
         </div>
         <!-- /. PAGE WRAPPER  -->
@@ -113,6 +111,7 @@
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
+    <script src="assets/js/FuncionesModDoctor.js"></script>
     <script src="assets/js/jquery-1.10.2.js"></script>
     <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>

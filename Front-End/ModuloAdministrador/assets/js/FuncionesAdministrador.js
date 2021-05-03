@@ -30,10 +30,47 @@ function createHeaders(keys) {
       "UserDoc":Doctor.UserDoc,
       "TelefonoDoc":Doctor.TelefonoDoc
     }
-  
     return data
-  
   }
+function ConvertirVendidos(Vendido){
+var data={
+"Nombre Medicamento":Vendido.NombreMedicamento,
+"Cantidad Vendida":Vendido.CantidadVendida
+}
+
+return data
+}
+function CrearPdfMedicina(){
+  fetch('http://localhost:5000/ReporteMedicamento')
+  .then(response => response.json())
+  .then(data=>{
+    //Declarando los headers
+    let headers = createHeaders([
+      "Nombre Medicamento",
+      "Cantidad Vendida"
+    ]);
+    // Insertamos la data
+    let datos=[]
+    for(let i =0;i<data.length;i++){
+      datos.push(Object.assign({},ConvertirVendidos(data[i])))
+    }
+    console.log(datos)
+    var contentJsPdf = {
+      headers,
+      datos
+  };
+  let styles = {
+      autoSize: false,
+      printHeaders: true,
+      columnWidths: 30
+      }
+    var doc = new jsPDF({ putOnlyUsedFonts: true, orientation: "landscape" });
+  
+    doc.table(50, 1, datos, headers, styles);
+    doc.save("Reporte_MasVendidos.pdf")
+  })
+}
+
   function ConvertirDataPacientes(Paciente){
   let dataPacientes={
     "NombrePac": Paciente.NombrePac,
@@ -45,6 +82,10 @@ function createHeaders(keys) {
   }
   return dataPacientes
   }
+
+
+
+
   function ConvertirDataEnfermeras(Enfermera){
     let dataEnfermeras={
         
@@ -1067,6 +1108,7 @@ function accionBotonModificarMedicina(){
         }
 
 
+/// BOTON PARA GENERAR REPORTE MAS VENDIDO()
 
 //prueba PDF
 

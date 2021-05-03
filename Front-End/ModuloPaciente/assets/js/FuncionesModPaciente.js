@@ -31,7 +31,7 @@ function ConvertirDataPedido(Pedido){
 
 }
 function CrearPDFPedido(){
- /*fetch('http://localhost:5000/VerPedidoPaciente')
+ fetch('http://localhost:5000/VerPedidoPaciente')
   .then(response => response.json())
   .then(data=>{
     //Declarando los headers
@@ -62,7 +62,7 @@ function CrearPDFPedido(){
     doc.table(50,10, datos, headers, styles);
     doc.save("Pedido.pdf")
   })
-  */
+  
   fetch('http://localhost:5000/VerPedidoPaciente')
   .then(response => response.json())
   .then(data=>{
@@ -75,23 +75,27 @@ function CrearPDFPedido(){
             "cantidadMedic":"${data[i].CantidadMedicamento}"
             }`
       }).then(resp=>resp.json).then(respuestaa=>{
-         
-        
-           
+        location.reload()
+    
+      
       })
 
 
 
     }
-    swal("Medicamento Registrado", {
-      button: true,
-    
-
-    });
-    
  
+    fetch(`http://localhost:5000/CerrarSesionPaciente`)
+    .then(response => response.json())
+    .then(data =>{
+     if(data.data=="cerrar"){
+    
+      
+     }
+    
+    });
+
   })
-  
+ 
 
 
 
@@ -125,17 +129,19 @@ function ModificarPerfilP(){
 });
 }
 /////////////////BOTON PARA MODIFICAR
-
+let UserPacienteCita=sessionStorage.getItem("UsuarioIniciado");
 function botonModificarP(){
-  let UserPacienteCita=sessionStorage.getItem("UsuarioIniciado");
+  
 
   let NombrePacienteAct=document.getElementById("INombreNuevo").value;
   let ApellidoPacienteAct=document.getElementById("IApellidoNuevo").value;
  let TelefonoPacienteAct=document.getElementById("ITelNuevo").value;
  let FechaNacPacienteAct=document.getElementById("InputDiaNuevo").value+'/'+document.getElementById("MesNuevo").value+'/'+document.getElementById("InputAñoNuevo").value;
  let UsuarioPacienteAct=document.getElementById("IUsuarioNuevo").value;
- let PasswordPacienteAct=document.getElementById("IUsuarioNuevo").value;
+ let PasswordPacienteAct=document.getElementById("IContraseñaNueva").value;
   let GeneroPacietneAct=document.getElementById("GeneroNuevo").value;
+
+
   if(`${UserPacienteCita}`==`${UsuarioPacienteAct}`){
       fetch(`http://localhost:5000/ModificarPacienteDatos/${UserPacienteCita}`, {
           method: 'PUT',
@@ -189,8 +195,11 @@ function botonModificarP(){
               icon: 'error',
               confirmButtonText: 'Ok'
             });
-           
+            location.reload();
+
       }else if(result.data=="Actualizado"){
+        sessionStorage.setItem("UsuarioIniciado",UsuarioPacienteAct)
+
           Swal.fire({
               title: 'Actualizado',
               text: 'Se actualizó el paciente',
@@ -198,12 +207,14 @@ function botonModificarP(){
               confirmButtonText: 'Ok'
             
             });
-            location.reload();
+location.reload()
+            
       }    
     })
     .catch(error => {
       console.error('Error:', error);
     });
+
   }
 }
 
@@ -262,6 +273,14 @@ let FechaCita=FechaSpliteado[2]+"/"+FechaSpliteado[1]+"/"+FechaSpliteado[0];
                 confirmButtonText: 'De acuerdo'
               });
               CargarCitas()
+           }else if(result.data="Aceptada"){
+            Swal.fire({
+              title: `Cita Aceptada`,
+              text: 'Debes esperar hasta el día de la cita',
+              icon: 'info',
+              confirmButtonText: 'De acuerdo'
+            });
+            CargarCitas()
            }
      
          }
@@ -281,7 +300,7 @@ fetch(`http://localhost:5000/VerCitaPaciente/${UserPacienteCita}`)
     tablaCitasPaciente+=`<tr>
    
     <td>${data.MotivoCita}</td>
-    <td>${data.EstadoCita}</td>
+    <td>Pendiente</td>
 
   </tr>
  `
@@ -366,18 +385,11 @@ fetch('http://localhost:5000/ComprarMedicina',
 .then(
     result => {
         console.log('Success:', result);
-        if(result.data=='Agregado'){
-          swal("Medicamento agregado", {
-            button: true,
-            value: location.reload()
-          });
-        
+        if(result.data="Agregado"){
+          location.reload()
         }else if(result.data="Actualizado"){
-          swal("Medicamento Actualizado", {
-            button: true,
-            value: location.reload()
-
-          });
+      
+          location.reload()
         }
   
       }
@@ -530,9 +542,7 @@ fetch(`http://localhost:5000/CerrarSesionPaciente`)
 .then(response => response.json())
 .then(data =>{
  if(data.data=="cerrar"){
-  swal("Cerrando Sesión..", {
-    button: true,
-  });
+
   
  }
 
