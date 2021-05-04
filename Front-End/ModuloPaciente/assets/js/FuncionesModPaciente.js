@@ -1,7 +1,7 @@
 let headers = new Headers()
 headers.append('Content-Type', 'application/json');
 headers.append('Accept', 'application/json');
-headers.append('Access-Control-Allow-Origin', 'http://localhost:5000');
+headers.append('Access-Control-Allow-Origin', 'http://34.72.234.227:5000');
 headers.append('Access-Control-Allow-Credentials', 'true');
 headers.append('GET', 'POST', 'OPTIONS','PUT','DELETE');
 ///PDF
@@ -31,7 +31,7 @@ function ConvertirDataPedido(Pedido){
 
 }
 function CrearPDFPedido(){
- fetch('http://localhost:5000/VerPedidoPaciente')
+ fetch('http://34.72.234.227:5000/VerPedidoPaciente')
   .then(response => response.json())
   .then(data=>{
     //Declarando los headers
@@ -63,11 +63,11 @@ function CrearPDFPedido(){
     doc.save("Pedido.pdf")
   })
   
-  fetch('http://localhost:5000/VerPedidoPaciente')
+  fetch('http://34.72.234.227:5000/VerPedidoPaciente')
   .then(response => response.json())
   .then(data=>{
     for(var i=0;i<data.length;i++){
-      fetch('http://localhost:5000/RegistrarPedido',{
+      fetch('http://34.72.234.227:5000/RegistrarPedido',{
     method:'POST',
     headers,
     body: `{
@@ -84,7 +84,7 @@ function CrearPDFPedido(){
 
     }
  
-    fetch(`http://localhost:5000/CerrarSesionPaciente`)
+    fetch(`http://34.72.234.227:5000/CerrarSesionPaciente`)
     .then(response => response.json())
     .then(data =>{
      if(data.data=="cerrar"){
@@ -112,7 +112,7 @@ function CrearPDFPedido(){
 function ModificarPerfilP(){
   let UserPacienteCita=sessionStorage.getItem("UsuarioIniciado");
 
-  fetch(`http://localhost:5000/ModificarPaciente/${UserPacienteCita}`)
+  fetch(`http://34.72.234.227:5000/ModificarPaciente/${UserPacienteCita}`)
   .then(Respuesta => Respuesta.json())
   .then(Data =>{
     let FechaNacimiento=`${Data.FechaPac}`.split("/");
@@ -143,7 +143,7 @@ function botonModificarP(){
 
 
   if(`${UserPacienteCita}`==`${UsuarioPacienteAct}`){
-      fetch(`http://localhost:5000/ModificarPacienteDatos/${UserPacienteCita}`, {
+      fetch(`http://34.72.234.227:5000/ModificarPacienteDatos/${UserPacienteCita}`, {
           method: 'PUT',
           headers,
           body:`{
@@ -172,7 +172,7 @@ function botonModificarP(){
 
 
   }else{
-  fetch(`http://localhost:5000/ModificarPaciente/${UserPacienteCita}`, {
+  fetch(`http://34.72.234.227:5000/ModificarPaciente/${UserPacienteCita}`, {
       method: 'PUT',
       headers,
       body:`{
@@ -240,7 +240,7 @@ let FechaCita=FechaSpliteado[2]+"/"+FechaSpliteado[1]+"/"+FechaSpliteado[0];
 
    let HoraCita=document.getElementById("InputHoraCita").value;
    let MotivoCita=document.getElementById("InputMotivoCita").value;
-   fetch('http://localhost:5000/SolicitarCita',
+   fetch('http://34.72.234.227:5000/SolicitarCita',
    {
        method:'POST',
        headers,
@@ -294,7 +294,7 @@ function CargarCitas(){
      
     let UserPacienteCita=sessionStorage.getItem("UsuarioIniciado");
     let tablaCitasPaciente=``;
-fetch(`http://localhost:5000/VerCitaPaciente/${UserPacienteCita}`)
+fetch(`http://34.72.234.227:5000/VerCitaPaciente/${UserPacienteCita}`)
 .then(response => response.json())
 .then(data =>{
     tablaCitasPaciente+=`<tr>
@@ -313,7 +313,7 @@ document.getElementById("CitasPaciente").innerHTML = tablaCitasPaciente;
 //Carga Medicamento
 function CargarMedicina(){
 let ContenidoMedicinas="";
- fetch('http://localhost:5000/VerMedicina')
+ fetch('http://34.72.234.227:5000/VerMedicina')
  .then(response => response.json())
  .then(data =>{
      var i;
@@ -369,7 +369,7 @@ document.getElementById(`BotonAgregar${x}`).onclick=function(){
 
 function AgregarMedicamento(indice,NombreMedicamento,PrecioMedicamento,CantidadTotal,Descripcion){
  let id= document.getElementById(`InputCantidad${indice}`).value
-fetch('http://localhost:5000/ComprarMedicina',
+fetch('http://34.72.234.227:5000/ComprarMedicina',
 {
     method:'POST',
     headers,
@@ -407,7 +407,7 @@ fetch('http://localhost:5000/ComprarMedicina',
 function CargarPedido(){
 let tablaPedido=``;
 let total=0;
-fetch(`http://localhost:5000/VerPedidoPaciente`)
+fetch(`http://34.72.234.227:5000/VerPedidoPaciente`)
 .then(response => response.json())
 .then(data =>{
   for(var i=0;i<data.length;i++){
@@ -446,7 +446,7 @@ document.getElementById("idTotal").innerHTML=`Total: Q  ${total}`;
 }
 
 function sumarProducto(NombreMedicamento,PrecioMedicamento,CantidadAgregar){
- fetch('http://localhost:5000/AgregarCompra',
+ fetch('http://34.72.234.227:5000/AgregarCompra',
   {
       method:'POST',
       headers,
@@ -485,7 +485,7 @@ function sumarProducto(NombreMedicamento,PrecioMedicamento,CantidadAgregar){
 }
 
 function restarProducto(NombreMedicamento,PrecioMedicamento,CantidadAgregar){
-  fetch('http://localhost:5000/RestarCompra',
+  fetch('http://34.72.234.227:5000/RestarCompra',
    {
        method:'POST',
        headers,
@@ -517,7 +517,7 @@ function restarProducto(NombreMedicamento,PrecioMedicamento,CantidadAgregar){
  function EliminarProducto(NombreMedicamento){
 
      
-  fetch(`http://localhost:5000/EliminarProducto/${NombreMedicamento}`,{
+  fetch(`http://34.72.234.227:5000/EliminarProducto/${NombreMedicamento}`,{
       method:'DELETE'
   })
   .then(res => res.json())
@@ -538,7 +538,7 @@ function restarProducto(NombreMedicamento,PrecioMedicamento,CantidadAgregar){
 
 function cerrarSesion(){
  
-fetch(`http://localhost:5000/CerrarSesionPaciente`)
+fetch(`http://34.72.234.227:5000/CerrarSesionPaciente`)
 .then(response => response.json())
 .then(data =>{
  if(data.data=="cerrar"){

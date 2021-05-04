@@ -1,7 +1,7 @@
 let headers = new Headers()
 headers.append('Content-Type', 'application/json');
 headers.append('Accept', 'application/json');
-headers.append('Access-Control-Allow-Origin', 'http://localhost:5000');
+headers.append('Access-Control-Allow-Origin', 'http://34.72.234.227:5000');
 headers.append('Access-Control-Allow-Credentials', 'true');
 headers.append('GET', 'POST', 'OPTIONS','PUT','DELETE');
 ///PDF
@@ -17,7 +17,7 @@ document.getElementById("PrincipalDoctor").innerHTML=`Bienvenida ${sessionStorag
 function ModificarPerfilD(){
   let UserDoctor=sessionStorage.getItem("UsuarioIniciado");
 
-  fetch(`http://localhost:5000/ModificarDoctor/${UserDoctor}`)
+  fetch(`http://34.72.234.227:5000/ModificarDoctor/${UserDoctor}`)
   .then(Respuesta => Respuesta.json())
   .then(Data =>{
     let FechaNacimientoDoc=`${Data.FechaDoc}`.split("/");
@@ -47,7 +47,7 @@ function botonModificarD(){
  let EspecialidadDocAct=document.getElementById("IEspeciNuevoD").value
   let GeneroDocAct=document.getElementById("GeneroNuevoD").value;
   if(`${UserDoctor}`==`${UsuarioDocAct}`){
-      fetch(`http://localhost:5000/ModificarDoctorDatos/${UserDoctor}`, {
+      fetch(`http://34.72.234.227:5000/ModificarDoctorDatos/${UserDoctor}`, {
           method: 'PUT',
           headers,
           body:`{
@@ -77,7 +77,7 @@ function botonModificarD(){
 
 
   }else{
-  fetch(`http://localhost:5000/ModificarDoctor/${UserDoctor}`, {
+  fetch(`http://34.72.234.227:5000/ModificarDoctor/${UserDoctor}`, {
       method: 'PUT',
       headers,
       body:`{

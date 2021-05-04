@@ -1,7 +1,7 @@
 let headers = new Headers()
 headers.append('Content-Type', 'application/json');
 headers.append('Accept', 'application/json');
-headers.append('Access-Control-Allow-Origin', 'http://localhost:5000');
+headers.append('Access-Control-Allow-Origin', 'http://34.72.234.227:5000');
 headers.append('Access-Control-Allow-Credentials', 'true');
 headers.append('GET', 'POST', 'OPTIONS','PUT','DELETE');
 let FormRegistro=document.getElementById("FormRegistro");
@@ -18,7 +18,7 @@ e.preventDefault();
 let UsernameForm=document.getElementById("InputUserLogin").value;
 let PasswordForm=document.getElementById("InputPasLogin").value;
 
-fetch(`http://localhost:5000/IniciarSesion/${UsernameForm}/${PasswordForm}`)
+fetch(`http://34.72.234.227:5000/IniciarSesion/${UsernameForm}/${PasswordForm}`)
 // Convirtiendo de string a texto
 .then(response => response.json())
 // Manejando la data
@@ -96,7 +96,7 @@ FormRegistro.addEventListener("submit",function(e){
   let UserPaciente=document.getElementById("InputUser").value;
   let PasswordPaciente=document.getElementById("InputPassword").value;
   let TelefonoPaciente=document.getElementById("InputTel").value;
-  fetch('http://localhost:5000/CrearPaciente',
+  fetch('http://34.72.234.227:5000/CrearPaciente',
   {
       method:'POST',
       headers,

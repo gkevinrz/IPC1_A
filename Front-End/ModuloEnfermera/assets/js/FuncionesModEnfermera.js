@@ -1,7 +1,7 @@
 let headers = new Headers()
 headers.append('Content-Type', 'application/json');
 headers.append('Accept', 'application/json');
-headers.append('Access-Control-Allow-Origin', 'http://localhost:5000');
+headers.append('Access-Control-Allow-Origin', 'http://34.72.234.227:5000');
 headers.append('Access-Control-Allow-Credentials', 'true');
 headers.append('GET', 'POST', 'OPTIONS','PUT','DELETE');
 ///PDF
@@ -33,7 +33,7 @@ function createHeaders(keys) {
 function ModificarPerfilE(){
   let UserEnfermera=sessionStorage.getItem("UsuarioIniciado");
 
-  fetch(`http://localhost:5000/ModificarEnfermera/${UserEnfermera}`)
+  fetch(`http://34.72.234.227:5000/ModificarEnfermera/${UserEnfermera}`)
   .then(Respuesta => Respuesta.json())
   .then(Data =>{
     let FechaNacimientoEnf=`${Data.FechaEnf}`.split("/");
@@ -62,7 +62,7 @@ function botonModificarE(){
  let PasswordEnfermeraAct=document.getElementById("IContraseñaNuevaE").value;
   let GeneroEnfermeraAct=document.getElementById("GeneroNuevoE").value;
   if(`${UserEnfermera}`==`${UsuarioEnfermeraAct}`){
-      fetch(`http://localhost:5000/ModificarEnfermeraDatos/${UserEnfermera}`, {
+      fetch(`http://34.72.234.227:5000/ModificarEnfermeraDatos/${UserEnfermera}`, {
           method: 'PUT',
           headers,
           body:`{
@@ -91,7 +91,7 @@ function botonModificarE(){
 
 
   }else{
-  fetch(`http://localhost:5000/ModificarEnfermera/${UserEnfermera}`, {
+  fetch(`http://34.72.234.227:5000/ModificarEnfermera/${UserEnfermera}`, {
       method: 'PUT',
       headers,
       body:`{
@@ -138,7 +138,7 @@ cantidadcitas=0;
 
 function cargarcitasenfermera(){
   let HtmlTextoTablaMedicina2=``;
-    fetch('http://localhost:5000/VerCitasPendientes')
+    fetch('http://34.72.234.227:5000/VerCitasPendientes')
     .then(response2 => response2.json())
     .then(data2 =>{
 
@@ -176,7 +176,7 @@ function cargarcitasenfermera(){
   
     function cargardoctores(r){
       let HtmlTextoTablaMedicina2=``;
-      fetch('http://localhost:5000/VerDoctores')
+      fetch('http://34.72.234.227:5000/VerDoctores')
       .then(response2 => response2.json())
       .then(data2 =>{
         var i;
@@ -215,7 +215,7 @@ function cargarcitasenfermera(){
 
 
   
-/*  fetch(`http://localhost:5000/VerDoctores`)
+/*  fetch(`http://34.72.234.227:5000/VerDoctores`)
     .then(response => response.json())
     .then(data2 =>{
       for(var l=0;l<data.length;l++){
